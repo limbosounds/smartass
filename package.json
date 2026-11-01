@@ -1,0 +1,68 @@
+{
+	"name": "smartass",
+	"version": "0.0.1",
+	"description": "Smartass",
+	"main": "src/index.tsx",
+	"scripts": {
+	  "dev": "TS_NODE_PROJECT=webpack/tsconfig.json CONFIG=development webpack-dev-server --config webpack/config.ts",
+	  "test": "echo \"No tests\" && exit 0"
+	},
+	"repository": {
+	  "type": "git",
+	  "url": "git+ssh://git@github.com/limbosounds/smartass.git"
+	},
+	"author": "limbo sounds",
+	"license": "MIT",
+	"bugs": {
+	  "url": "https://github.com/limbosounds/smartass/issues"
+	},
+	"homepage": "https://github.com/limbosounds/smartass#readme",
+	"dependencies": {
+	  "@sounds.of.limbo/extensions": "^0.4.0",
+	  "@sounds.of.limbo/tooltip": "^0.2.0",
+	  "history": "^4.10.0",
+	  "mobx": "^6.16.1",
+	  "mobx-react": "^7.6.0",
+	  "mobx-state-tree": "^7.4.0",
+	  "react": "^18.3.1",
+	  "react-dom": "^18.3.1",
+	  "react-helmet": "^6.1.0",
+	  "react-router-dom": "^5.3.4",
+	  "uuid": "^14.0.2"
+	},
+	"devDependencies": {
+	  "@types/html-webpack-plugin": "^4.0.0",
+	  "@types/mocha": "^10.0.10",
+	  "@types/node": "^20.19.43",
+	  "@types/react": "^18.3.31",
+	  "@types/react-dom": "^18.3.7",
+	  "@types/react-helmet": "^6.1.11",
+	  "@types/react-router-dom": "^5.3.3",
+	  "@types/superagent": "^8.1.11",
+	  "@types/uuid": "^11.0.0",
+	  "@types/webpack": "^5.28.5",
+	  "css-loader": "^7.1.5",
+	  "css-minimizer-webpack-plugin": "^8.0.0",
+	  "html-loader": "^5.1.0",
+	  "html-webpack-plugin": "^5.6.8",
+	  "ignore-loader": "^0.1.2",
+	  "mini-css-extract-plugin": "^2.10.2",
+	  "mocha": "^12.0.3",
+	  "sass": "1.104.1",
+	  "sass-loader": "^17.0.1",
+	  "shipit-cli": "^5.3.0",
+	  "shipit-deploy": "^5.3.0",
+	  "should": "^13.2.3",
+	  "source-map-loader": "^5.0.0",
+	  "style-loader": "^4.0.0",
+	  "terser-webpack-plugin": "^5.6.1",
+	  "ts-loader": "^9.6.2",
+	  "ts-node": "^10.9.2",
+	  "tsconfig-paths": "4.2.0",
+	  "typescript": "^5.9.3",
+	  "webpack": "^5.111.1",
+	  "webpack-cli": "^7.2.3",
+	  "webpack-dev-server": "^6.0.0"
+	}
+  }
+  

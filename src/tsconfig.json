@@ -1,0 +1,43 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "target": "ES2018",
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": true,
+        "strict": false,
+        "sourceMap": true,
+        "outDir": "dist/",
+        "jsx": "react",
+        "traceResolution": false,
+        "experimentalDecorators": true,
+        "useDefineForClassFields": true,
+        "esModuleInterop": true,
+		"emitDecoratorMetadata": true,
+
+		"noImplicitThis": true,
+
+        "allowJs": false,
+        "declaration": false,
+        "removeComments": true,
+        "noLib": false,
+        "strictNullChecks": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "preserveConstEnums": true,
+        "types": [ "node" ],
+        "lib": [ "es6", "dom", "dom.iterable" ],
+        "downlevelIteration": true,
+        "resolveJsonModule": true,
+        "typeRoots": [
+            "../node_modules/@types"
+        ]
+    },
+    "include": [
+        "**/*"
+    ],
+	"exclude": [
+		"**/*.test.ts"
+	]
+}
