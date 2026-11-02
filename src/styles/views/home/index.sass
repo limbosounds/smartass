@@ -1,0 +1,72 @@
+@use "styles/vars"
+
+main.v-home
+	padding: 60px
+
+	h1
+		text-align: center
+		margin-bottom: 60px
+
+	div.hp-actions
+		display: flex
+		align-items: stretch
+		justify-content: space-between
+		+vars.childSpaceRight(24px)
+
+		div.hp-action
+			width: 50%
+			flex-grow: 1
+			flex-shrink: 1
+			min-width: 0
+			padding: 24px
+				top: 60px
+			border: 2px dashed rgba(white, .54)
+			background: rgba(white, .06)
+			border-radius: 12px
+			+vars.transition
+
+			&:has(~ .expanded), &.expanded ~ *
+				opacity: .5
+				pointer-events: none
+
+			&.expanded
+				width: 60%
+				flex-shrink: 0
+				padding-top: 24px
+				border-style: solid
+
+			&:not(.expanded)
+				cursor: pointer
+				&:hover
+					background: rgba(white, .12)
+					border-style: solid
+
+				div.form
+					div.row
+						height: 0
+						opacity: 0
+
+			h2
+				font-size: 24px
+				text-align: center
+				margin-bottom: 24px
+
+			div.form
+				+vars.childSpaceBottom(12px)
+				div.row
+					height: 48px
+					+vars.transition
+					
+					&.actions
+						display: flex
+						align-items: center
+						justify-content: flex-end
+						+vars.childSpaceRight(12px)
+						&.center
+							justify-content: center
+
+					p
+						font-size: 16px
+						line-height: 24px
+						text-align: center
+						opacity: .54

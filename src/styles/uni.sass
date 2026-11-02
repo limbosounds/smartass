@@ -1,0 +1,70 @@
+@use "styles/vars"
+
+.u-child-spacing
+	&.__right
+		+vars.childSpaceRight(12px)
+
+.u-flex
+	display: flex
+	&.__align
+		&-center
+			align-items: center
+
+	&.__justify
+		&-center
+			justify-content: center
+
+.u-button
+	--ub-color: white
+	height: 48px
+	border-radius: 6px
+	padding: 0 24px
+	display: flex
+	align-items: center
+	justify-content: center
+	font-weight: 700
+	cursor: pointer
+	+vars.transition
+
+	&.disabled
+		opacity: .72
+		filter: grayscale(1)
+		cursor: not-allowed
+
+	&.__type
+		&-solid
+			color: vars.$colorBackground
+			background: var(--ub-color)
+			&:not(.disabled)
+				box-shadow: 0 12px 24px -6px var(--ub-color)
+				&:hover
+					box-shadow: 0 6px 12px -3px var(--ub-color)
+					filter: brightness(.9) saturate(1.5)
+
+		&-outline
+			color: var(--ub-color)
+			box-shadow: inset 0 0 0 3px var(--ub-color), 0 0 24px -6px var(--ub-color)
+			&:hover, &.disabled
+				box-shadow: inset 0 0 0 2px var(--ub-color)
+
+	&.__color
+		&-main
+			--ub-color: #{vars.$colorMain}
+			&.__type-solid
+				color: white
+
+		&-positive
+			--ub-color: #{vars.$colorPositive}
+
+.u-input
+	height: 48px
+	border-radius: 6px
+	box-shadow: inset 0 0 0 2px rgba(white, .54)
+	padding: 0 12px
+	+vars.transition
+
+input.u-input
+	display: block
+	width: 100%
+	&:focus
+		box-shadow: inset 0 0 0 3px white

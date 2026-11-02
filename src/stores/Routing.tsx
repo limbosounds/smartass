@@ -5,6 +5,14 @@ class RoutingStore {
 		= createBrowserHistory({
 			basename: "/",
 		})
+
+	patterns
+		= {
+			home: "/",
+			lobby: {
+				index: "/lobby/:lobbyId",
+			},
+		}
 }
 
 export default
