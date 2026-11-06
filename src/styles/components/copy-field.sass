@@ -1,0 +1,22 @@
+@use "styles/vars"
+
+div.c-copy-field
+	display: flex
+	align-items: center
+	min-width: 0
+	+vars.childSpaceRight(12px)
+
+	span.cf-label
+		flex-shrink: 0
+		font-weight: 700
+		opacity: .54
+
+	input.u-input
+		flex-grow: 1
+		min-width: 0
+		font-family: monospace
+		user-select: text
+
+	div.u-button
+		flex-shrink: 0
+		min-width: 96px

@@ -1,8 +1,11 @@
 import React from "react"
 import { observer } from "mobx-react"
-import { v4 as uuid } from "uuid"
+import { generatePath } from "react-router-dom"
 
 import { classNames } from "utils/react"
+import Routing from "stores/Routing"
+import Lobby from "stores/Lobby"
+import SimpleInput from "components/Forms/Inputs/Simple"
 
 export interface HomeCreateActionProps {
 
@@ -10,6 +13,7 @@ export interface HomeCreateActionProps {
 
 export interface HomeCreateActionState {
 	expanded: boolean
+	name: string
 }
 
 @observer
@@ -20,6 +24,7 @@ extends React.Component<HomeCreateActionProps, HomeCreateActionState> {
 		: Readonly<HomeCreateActionState>
 		= {
 			expanded: false,
+			name: "",
 		}
 
 	expand = () => {
@@ -34,10 +39,17 @@ extends React.Component<HomeCreateActionProps, HomeCreateActionState> {
 		})
 	}
 
+	setName = (
+		value: string,
+	) => {
+		this.setState({
+			name: value,
+		})
+	}
+
 	create = () => {
-		const id = uuid()
-		alert(id)
-		// TODO loading state
+		const lobbyId = Lobby.host(this.state.name || "Host")
+		Routing.history.push(generatePath(Routing.patterns.lobby.index, { lobbyId }))
 	}
 
 	render() {
@@ -58,6 +70,13 @@ extends React.Component<HomeCreateActionProps, HomeCreateActionState> {
 							Host new game and play with your friends <br />
 							<i>Link to gamepack template</i>
 						</p>
+					</div>
+					<div className="row">
+						<SimpleInput
+							value={this.state.name}
+							onChange={this.setName}
+							placeholder="Your name (optional)"
+						/>
 					</div>
 					<div className="row actions center">
 						<div

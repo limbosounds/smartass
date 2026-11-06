@@ -7,6 +7,7 @@ import "styles/main"
 import "styles/uni"
 import Routing from "stores/Routing"
 import Home from "views/Home"
+import LobbyView from "views/Lobby"
 
 export interface AppProps
 extends RouteComponentProps<any> {
@@ -28,6 +29,11 @@ extends React.Component<AppProps, AppState> {
 					path={Routing.patterns.home}
 					exact
 					component={Home}
+				/>
+				<Route
+					path={Routing.patterns.lobby.index}
+					exact
+					component={LobbyView}
 				/>
 			</Switch>
 		</>

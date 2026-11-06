@@ -1,0 +1,213 @@
+@use "styles/vars"
+
+main.v-lobby
+	padding: 60px
+	height: 100%
+	box-sizing: border-box
+	display: flex
+	flex-direction: column
+	+vars.childSpaceBottom(24px)
+
+	+vars.max(vars.$mTabletB)
+		padding: 24px
+
+	&.__join
+		align-items: center
+		h1
+			text-align: center
+		div.lb-card
+			width: 100%
+			max-width: 480px
+
+	div.lb-card
+		padding: 24px
+		border: 2px solid rgba(white, .54)
+		background: rgba(white, .06)
+		border-radius: 12px
+		+vars.childSpaceBottom(12px)
+
+		&.__notice
+			border-color: vars.$colorWarning
+
+		p
+			font-size: 16px
+			line-height: 24px
+
+	div.lb-actions
+		display: flex
+		justify-content: flex-end
+		+vars.childSpaceRight(12px)
+
+	header.lb-header
+		flex-shrink: 0
+		display: flex
+		align-items: center
+		justify-content: space-between
+		+vars.childSpaceRight(24px)
+
+		+vars.max(vars.$mTabletA)
+			flex-direction: column
+			align-items: stretch
+			+vars.childSpaceRight(0)
+			+vars.childSpaceBottom(12px)
+
+		div.lb-title
+			display: flex
+			align-items: baseline
+			flex-wrap: wrap
+			+vars.childSpaceRight(12px)
+
+		div.lb-keys
+			flex-grow: 1
+			max-width: 640px
+			min-width: 0
+			+vars.childSpaceBottom(12px)
+
+	span.lb-status
+		padding: 4px 12px
+		border-radius: 12px
+		font-weight: 700
+		background: rgba(white, .12)
+		&.__ready
+			color: vars.$colorPositive
+		&.__connecting
+			color: vars.$colorWarning
+		&.__not-found, &.__closed, &.__kicked, &.__error
+			color: vars.$colorNegative
+
+	span.lb-role
+		opacity: .54
+
+	div.lb-body
+		flex-grow: 1
+		min-height: 360px
+		display: flex
+		align-items: stretch
+		+vars.childSpaceRight(24px)
+
+		+vars.max(vars.$mTabletB)
+			flex-direction: column
+			+vars.childSpaceRight(0)
+			+vars.childSpaceBottom(24px)
+
+	aside.lb-peers
+		width: 280px
+		flex-shrink: 0
+		padding: 24px
+		border-radius: 12px
+		background: rgba(white, .06)
+
+		+vars.max(vars.$mTabletB)
+			width: auto
+
+		h2
+			font-size: 20px
+			margin-bottom: 12px
+
+		ul
+			list-style: none
+			+vars.childSpaceBottom(6px)
+
+		li.lb-peer
+			display: flex
+			align-items: center
+			+vars.childSpaceRight(12px)
+
+			span.lp-name
+				flex-grow: 1
+				min-width: 0
+				+vars.toe
+
+			span.lp-role
+				opacity: .54
+
+			span.lp-kick
+				color: vars.$colorNegative
+				cursor: pointer
+				&:hover
+					text-decoration: underline
+
+			&.__self span.lp-name
+				font-weight: 700
+
+			&.__host span.lp-role
+				color: vars.$colorAccent
+				opacity: 1
+
+	section.lb-console
+		flex-grow: 1
+		min-width: 0
+		display: flex
+		flex-direction: column
+		border-radius: 12px
+		background: rgba(white, .06)
+		overflow: hidden
+
+	div.lb-log
+		flex-grow: 1
+		min-height: 0
+		overflow-y: auto
+		padding: 12px 24px
+		font-family: monospace
+		font-size: 13px
+		line-height: 20px
+		user-select: text
+		+vars.scrollbar
+
+	div.lb-log-entry
+		display: flex
+		+vars.childSpaceRight(12px)
+
+		span
+			user-select: text
+
+		span.le-time
+			flex-shrink: 0
+			opacity: .38
+
+		span.le-route
+			flex-shrink: 0
+			color: vars.$colorAccent
+
+		span.le-text
+			min-width: 0
+			word-break: break-word
+			white-space: pre-wrap
+
+		&.__system span.le-text
+			opacity: .54
+			font-style: italic
+
+		&.__outgoing span.le-route
+			color: vars.$colorPositive
+
+		&.__direct span.le-route
+			color: vars.$colorWarning
+
+	form.lb-send
+		flex-shrink: 0
+		display: flex
+		align-items: center
+		padding: 12px
+		border-top: 1px solid rgba(white, .12)
+		gap: 12px
+
+		+vars.max(vars.$mMobileL)
+			flex-wrap: wrap
+
+		select.u-input
+			width: 160px
+			flex-shrink: 0
+			+vars.max(vars.$mMobileL)
+				width: 100%
+			cursor: pointer
+			option
+				color: vars.$colorDark
+				background: white
+
+		div.c-simple-input-control
+			flex-grow: 1
+			min-width: 0
+
+		button.u-button
+			flex-shrink: 0
